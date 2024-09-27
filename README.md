@@ -1,0 +1,1 @@
+A rudimentary file storage for Radix, just for fun as an experiment. Does nothing more than storing and retrieving bytes to and from a KeyValueStore.
