@@ -53,8 +53,21 @@ CALL_FUNCTION
     "FileStorage"
     "instantiate"
 ```
+### Store file with blob (recommended)
+For this approach, you will have to add a blob to the transaction. This happens outside of the manifest, and instead you refer to its hash in the manifest. The Radix Engine Toolkit is capable of this, for example.
+
+Using this method, you can store files using the full file size limit.
+```
+CALL_METHOD
+    Address("COMPONENT_ADDRESS") # Replace with component address
+    "store_file"
+    Blob("BLOB_HASH") # Replace with a hash reference to the blob
+    "filename.png"
+```
 ### Store file with bytes in manifest
 You can use something like https://tomeko.net/online_tools/file_to_hex.php?lang=en to get the hex of a file for testing purposes. 
+
+**Note**: if you use this method, you can only use half the file size limit, as each byte is hex-encoded to two characters, which doubles the transaction size.
 
 **Uncheck the two options:**
 * Use 0x and comma as separator (C-like)
@@ -64,16 +77,6 @@ CALL_METHOD
     Address("COMPONENT_ADDRESS") # Replace with component address
     "store_file"
     Bytes("HEX_ENCODED_BYTES") # Replace with hex-encoded bytes
-    "filename.png"
-```
-
-### Store file with blob
-For this approach, you will have to add a blob to the transaction. This happens outside of the manifest, and instead you refer to its hash in the manifest. The Radix Engine Toolkit is capable of this, for example.
-```
-CALL_METHOD
-    Address("COMPONENT_ADDRESS") # Replace with component address
-    "store_file"
-    Blob("BLOB_HASH") # Replace with a hash reference to the blob
     "filename.png"
 ```
 

@@ -18,12 +18,12 @@ mod file_storage {
 
     impl FileStorage {
         /// Instantiate the file storage component. It is permissionless and the only configurable
-        /// thing is the file size limit, which is set to 500kb to ensure we don't run into
+        /// thing is the file size limit, which is set to 800KB to ensure we don't run into
         /// transaction limits.
         pub fn instantiate() -> Global<FileStorage> {
             Self {
                 storage: KeyValueStore::<String, (String, Vec<u8>)>::new_with_registered_type(),
-                file_size_limit: 512000,
+                file_size_limit: 819200,
             }
             .instantiate()
             .prepare_to_globalize(OwnerRole::None)
