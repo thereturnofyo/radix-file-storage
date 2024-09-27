@@ -1,10 +1,10 @@
 A rudimentary file storage for Radix, just for fun as an experiment. Does nothing more than storing and retrieving bytes to and from a KeyValueStore.
 
-
-
 ## Methods
 ### store_file
 Stores a file's bytes in the KeyValueStore with the file's hash as the key. 
+
+By default, files up to 800KB are allowed, depending on the transaction method used (see manifests below).
 
 Accepts:
 * Vec\<u8\>: hex-encoded file bytes
