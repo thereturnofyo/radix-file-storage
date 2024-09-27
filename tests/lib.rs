@@ -8,21 +8,48 @@ use storage::file_storage_test::*;
 fn test_store_and_get() -> Result<(), RuntimeError> {
     // Set up environment
     let (mut env, mut component) = setup_env()?;
+
     let file = fs::read("icon.svg");
 
     // Store file
     let file_hash = match file {
-        Ok(bytes) => component.store_file(bytes, "icon_stored.svg".to_string(), &mut env)?,
+        Ok(bytes) => component.store_file(bytes, "icon_stored.svg".to_string(), &mut env),
         Err(e) => panic!("Could not read file due to {}", e),
     };
 
+    assert!(file_hash.is_ok());
+
     // Get file
-    let (file_name, file) = component.get_file(file_hash, &mut env)?;
+    let (file_name, file) = component.get_file(file_hash.unwrap(), &mut env)?;
 
     // Write file to disk
     let write_result = fs::write(file_name, file);
 
     assert!(write_result.is_ok());
+
+    Ok(())
+}
+
+#[test]
+fn test_cannot_store_same_file() -> Result<(), RuntimeError> {
+    // Set up environment
+    let (mut env, mut component) = setup_env()?;
+
+    let file = fs::read("icon.svg");
+    let file2 = fs::read("icon.svg");
+
+    // Store file twice
+    match file {
+        Ok(bytes) => component.store_file(bytes, "icon_stored.svg".to_string(), &mut env)?,
+        Err(e) => panic!("Could not read file due to {}", e),
+    };
+
+    let file_hash2 = match file2 {
+        Ok(bytes) => component.store_file(bytes, "icon_stored2.svg".to_string(), &mut env),
+        Err(e) => panic!("Could not read file due to {}", e),
+    };
+
+    assert!(file_hash2.is_err());
 
     Ok(())
 }

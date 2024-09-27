@@ -39,6 +39,12 @@ mod file_storage {
             );
 
             let file_hash = hash(&bytes).to_string();
+
+            assert!(
+                self.storage.get(&file_hash).is_none(),
+                "File with this hash already exists!"
+            );
+
             self.storage
                 .insert(file_hash.clone(), (file_name.clone(), bytes));
 
