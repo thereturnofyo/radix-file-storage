@@ -67,11 +67,12 @@ CALL_METHOD
 ### Store file with bytes in manifest
 You can use something like https://tomeko.net/online_tools/file_to_hex.php?lang=en to get the hex of a file for testing purposes. 
 
-**Note**: if you use this method, you can only use half the file size limit, as each byte is hex-encoded to two characters, which doubles the transaction size.
-
 **Uncheck the two options:**
 * Use 0x and comma as separator (C-like)
 * Insert newlines after each 16B
+
+**Note**: if you use this method, you can only use half the file size limit, as each byte is hex-encoded to two characters, which doubles the transaction size.
+
 ```
 CALL_METHOD
     Address("COMPONENT_ADDRESS") # Replace with component address
