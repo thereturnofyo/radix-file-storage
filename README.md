@@ -39,7 +39,7 @@ Fields:
 
 ## Component addresses
 ### Stokenet
-`component_tdx_2_1crmc40pxu3nj7rxzwsusr0l553ch8v5gzfjnx5gdp2m304nlp5279z`
+`component_tdx_2_1cpnlnca3aw5tujzykgz5ml7xwgharnda9fxjvhvmfp63vq80h4ntr5`
 
 ### Mainnet
 Currently not deployed to mainnet.
