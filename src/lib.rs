@@ -23,7 +23,7 @@ mod file_storage {
         pub fn instantiate() -> Global<FileStorage> {
             Self {
                 storage: KeyValueStore::<String, (String, Vec<u8>)>::new_with_registered_type(),
-                file_size_limit: 500000,
+                file_size_limit: 512000,
             }
             .instantiate()
             .prepare_to_globalize(OwnerRole::None)
