@@ -1,5 +1,7 @@
 A rudimentary file storage for Radix, just for fun as an experiment. Does nothing more than storing and retrieving bytes to and from a KeyValueStore.
 
+Example site that allows uploading of files and serves them based on their hashes: https://radix-files.vercel.app/
+
 ## Methods
 ### store_file
 Stores a file's bytes in the KeyValueStore with the file's hash as the key. 
@@ -39,7 +41,7 @@ Fields:
 
 ## Component addresses
 ### Stokenet
-`component_tdx_2_1cpnlnca3aw5tujzykgz5ml7xwgharnda9fxjvhvmfp63vq80h4ntr5`
+`component_tdx_2_1cpd8dr5lza00jyk28npcu9qknn4j7ug26nmnhzwtsa6qhmr99enex6`
 
 ### Mainnet
 Currently not deployed to mainnet.
