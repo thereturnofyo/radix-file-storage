@@ -31,19 +31,19 @@ mod file_storage {
         }
 
         /// Stores a file in the KeyValueStore.
-        /// 
+        ///
         /// ### Arguments
         /// * `bytes: Vec<u8>`: hex-encoded file bytes
         /// * `file_name: String`: the file's name
-        /// 
+        ///
         /// ### Returns
         /// * `String`: the file's hash
-        /// 
+        ///
         /// ### Events emitted
         /// * FileStored:
         ///     * `file_hash: String`: the file's hash
         ///     * `file_name: String`: the file's name
-        /// 
+        ///
         /// ### Panics
         /// * When the file size limit is exceeded
         /// * When a file hash already exists
@@ -73,18 +73,18 @@ mod file_storage {
         }
 
         /// Gets a file from the KVS
-        /// 
+        ///
         /// ### Arguments
         /// * `file_hash: String`: the file's hash
-        /// 
+        ///
         /// ### Returns
         /// * `(String, Vec<u8>)`: a tuple containing the file name and the file bytes
-        /// 
+        ///
         /// ### Events emitted
         /// * FileRetrieved:
         ///     * `file_hash: String`: the file's hash
         ///     * `file_name: String`: the file's name
-        /// 
+        ///
         /// ### Panics
         /// * When `file_hash` is not found in the KeyValueStore  
         pub fn get_file(&self, file_hash: String) -> (String, Vec<u8>) {
