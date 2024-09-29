@@ -58,7 +58,7 @@ CALL_FUNCTION
     "instantiate"
 ```
 ### Store file with blob (recommended)
-For this approach, you will have to add a blob to the transaction. This happens outside of the manifest, and instead you refer to its hash in the manifest. The Radix Engine Toolkit is capable of this, for example.
+For this approach, you will have to add a blob to the transaction. This happens outside of the manifest, and instead you refer to its hash in the manifest. Tools you can use to do this are for example the dApp Toolkit and the Radix Engine Toolkit.
 
 Using this method, you can store files using the full file size limit.
 ```
