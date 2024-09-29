@@ -53,7 +53,7 @@ Currently not deployed to mainnet.
 You can use the deployed version, but can also instantiate your own, of course:
 ```
 CALL_FUNCTION
-    Address("package_tdx_2_1p4vtw2k07r2h7nt3lnkjssccphyjdhhmweq5594hw8jskj43vgfxe0")
+    Address("package_tdx_2_1ph9m4alsknm4zyn0azwf6k2ejmh474075r3k5mpp7ze0vk068duvpy")
     "FileStorage"
     "instantiate"
 ```
