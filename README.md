@@ -2,11 +2,13 @@ A rudimentary file storage for Radix, just for fun as an experiment. Does nothin
 
 Example site that allows uploading of files and serves them based on their hashes: https://radix-files.vercel.app/
 
+A simple setup for serving files, made in Svelte, can be found here: https://github.com/yr12345678/radix-file-serving.
+
 ## Methods
 ### store_file
 Stores a file's bytes in the KeyValueStore with the file's hash as the key. 
 
-By default, files up to 500KB are allowed, depending on the transaction method used (see manifests below).
+By default, files up to 500KB are allowed, depending on the transaction method used (see manifests below). The mobile-to-mobile connection seems to have trouble processing larger files, but at least about 150KB should work there.
 
 Accepts:
 * Vec\<u8\>: hex-encoded file bytes
