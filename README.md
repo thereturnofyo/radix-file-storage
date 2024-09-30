@@ -46,7 +46,7 @@ Fields:
 `component_tdx_2_1cpd8dr5lza00jyk28npcu9qknn4j7ug26nmnhzwtsa6qhmr99enex6`
 
 ### Mainnet
-Currently not deployed to mainnet.
+`component_rdx1crlx9t5hdz2yx494zhcqyquyhdmwvnuryqt4lty2d6tcng3elxtuee`
 
 ## Usage
 ### Instantiate
