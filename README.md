@@ -2,9 +2,9 @@ A rudimentary file storage for Radix, just for fun as an experiment. Does nothin
 
 **Note that Radix was not made for this.**
 
-Example site that allows uploading of files and serves them based on their hashes: https://radix-files.vercel.app/ (Stokenet)
+Example site that allows uploading of files and serves them based on their hashes: https://radix-files.vercel.app/ (Stokenet) or https://radix-files-mainnet.vercel.app/ (Mainnet)
 
-A simple setup for serving files, made in Svelte, can be found here: https://github.com/yr12345678/radix-file-serving.
+A simple setup for serving files, made in Svelte, can be found here: https://github.com/thereturnofyo/radix-file-serving.
 
 ## Methods
 ### store_file
