@@ -63,11 +63,41 @@ CALL_FUNCTION
 For this approach, you will have to add a blob to the transaction. This happens outside of the manifest, and instead you refer to its hash in the manifest. Tools you can use to do this are for example the dApp Toolkit and the Radix Engine Toolkit.
 
 Using this method, you can store files using the full file size limit.
+
+**Option 1: Using the Python script (upload_file.py)**
+
+An example Python script using the Radix Engine Toolkit is included in this repository. To use it:
+
+1. Install dependencies:
+   ```bash
+   pip install radix-engine-toolkit requests
+   ```
+
+2. Edit `upload_file.py` and configure:
+   ```python
+   FILE_TO_UPLOAD = "your_file.txt"  # Your file path
+   private_key_list = [...]  # Your private key bytes
+   NETWORK_ID = 0x01  # 0x01 for Mainnet, 0x02 for Stokenet
+   ```
+
+3. Run the script:
+   ```bash
+   python upload_file.py
+   ```
+
+The script automatically:
+- Reads your file as bytes
+- Calculates the Blake2b-256 hash (Radix standard)
+- Creates a transaction manifest with the blob
+- Submits the transaction to the network
+
+**Option 2: Manual manifest with blob**
+
 ```
 CALL_METHOD
     Address("COMPONENT_ADDRESS") # Replace with component address
     "store_file"
-    Blob("BLOB_HASH") # Replace with a hash reference to the blob
+    Blob("BLOB_HASH") # Replace with a Blake2b-256 hash reference to the blob
     "filename.png"
 ```
 ### Store file with bytes in manifest
